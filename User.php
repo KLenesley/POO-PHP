@@ -8,6 +8,10 @@ class User
         $this->name = $nom;
     }
 
+    public function __toString(){
+        return "Nom : " . $this->name;
+    }
+
     public function getName(){
         return $this->name;
     }
