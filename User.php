@@ -2,17 +2,10 @@
 
 class User
 {
-    private $name;
+    protected $name;
 
-    public function __construct($nom = "Inconnu"){
-        $this->name = $nom;
-    }
-
-    public function __toString(){
-        return "Nom : " . $this->name;
-    }
-
-    public function getName(){
-        return $this->name;
+    public function setName($name)
+    {
+        $this->name = $name;
     }
 }

@@ -1,9 +1,10 @@
 <?php
 
 include_once ("User.php");
+include_once ("Student.php");
 
-$user1 = new User();
+$user1 = new Student();
 
-echo "Nom : " . $user1->getName(). "\n";
+$user1->setName("Bob");
 
-echo $user1;
+echo $user1->getName();
