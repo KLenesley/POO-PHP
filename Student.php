@@ -2,8 +2,20 @@
 
 class Student extends User
 {
-    public function getName()
+    private string $classe;
+
+    public function setClasse(?string $classe)
     {
-        return $this->name;
+        $this->classe = $classe;
+    }
+
+    public function getClasse()
+    {
+        return $this->classe . "\n";
+    }
+
+    public function travailler()
+    {
+        return "Je suis en cours \n";
     }
 }
