@@ -1,6 +1,9 @@
 <?php
 
-class Student extends User 
+require_once 'User.php';
+include_once 'Coursable.php';
+
+class Student extends User implements Coursable
 {
     private string $classe;
 
@@ -17,5 +20,10 @@ class Student extends User
     public function travailler()
     {
         return "Je suis en cours \n";
+    }
+
+    public function suivreCours()
+    {
+        return "Je suis le cours \n";
     }
 }

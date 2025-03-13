@@ -1,8 +1,10 @@
 <?php
 
-include_once ("User.php");
-include_once ("Student.php");
-include_once ("Teacher.php");
+require_once ("User.php");
+require_once ("Student.php");
+require_once ("Teacher.php");
+include_once ("Enseignable.php");
+include_once ("Coursable.php");
 
 function afficherTravail(User $user)
 {
@@ -10,6 +12,8 @@ function afficherTravail(User $user)
 
     if ($user instanceof Teacher)
         echo $user->enseigner();
+    if ($user instanceof Student)
+        echo $user->suivreCours();
 }
 
 $user1 = new Student();

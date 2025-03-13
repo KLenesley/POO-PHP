@@ -1,5 +1,8 @@
 <?php
 
+require_once 'User.php';
+include_once 'Enseignable.php';
+
 class Teacher extends User implements Enseignable
 {
     private string $matieres;
