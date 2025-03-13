@@ -1,6 +1,6 @@
 <?php
 
-class Teacher extends User
+class Teacher extends User implements Enseignable
 {
     private string $matieres;
 
@@ -15,6 +15,11 @@ class Teacher extends User
     }
 
     public function travailler()
+    {
+        return "Je prépare mes cours \n";
+    }
+
+    public function enseigner()
     {
         return "J'enseigne \n";
     }

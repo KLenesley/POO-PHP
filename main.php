@@ -7,6 +7,9 @@ include_once ("Teacher.php");
 function afficherTravail(User $user)
 {
     echo $user->travailler();
+
+    if ($user instanceof Teacher)
+        echo $user->enseigner();
 }
 
 $user1 = new Student();

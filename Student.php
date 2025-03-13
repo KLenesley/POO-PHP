@@ -1,6 +1,6 @@
 <?php
 
-class Student extends User
+class Student extends User 
 {
     private string $classe;
 
