@@ -10,9 +10,9 @@ function afficherTravail(User $user)
 {
     echo $user->travailler();
 
-    if ($user instanceof Teacher)
+    if ($user instanceof Enseignable)
         echo $user->enseigner();
-    if ($user instanceof Student)
+    if ($user instanceof Coursable)
         echo $user->suivreCours();
 }
 
