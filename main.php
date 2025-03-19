@@ -16,12 +16,18 @@ function afficherTravail(User $user)
         echo $user->suivreCours();
 }
 
+echo "nbStudents = " . Student::$nbStudents . "\n";
+
+echo "\n";
+
 $user1 = new Student();
 $user1->setName("Momo");
 $user1->setClasse("SIO1");
 
 echo $user1->getName();
 echo $user1->getClasse();
+
+echo "nbStudents = " . Student::$nbStudents . "\n";
 
 echo "\n";
 
@@ -32,6 +38,8 @@ $user2->setClasse("SIO1");
 echo $user2->getName();
 echo $user2->getClasse();
 
+echo "nbStudents = " . Student::$nbStudents . "\n";
+
 echo "\n";
 
 $user3 = new Teacher();
@@ -40,6 +48,8 @@ $user3->setMatieres("SLAM");
 
 echo $user3->getName();
 echo $user3->getMatieres();
+
+echo "nbStudents = " . Student::$nbStudents . "\n";
 
 echo "\n";
 

@@ -6,6 +6,12 @@ include_once 'Coursable.php';
 class Student extends User implements Coursable
 {
     private string $classe;
+    public static int $nbStudents = 0;
+
+    public function __construct()
+    {
+        self::$nbStudents++;
+    }
 
     public function setClasse(?string $classe)
     {
