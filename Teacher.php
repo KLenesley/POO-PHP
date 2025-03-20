@@ -14,16 +14,16 @@ class Teacher extends User implements Enseignable
 
     public function getMatieres()
     {
-        return $this->matieres . "<br>";
+        return $this->matieres;
     }
 
     public function travailler()
     {
-        return "Je prépare mes cours <br>";
+        return "Je prépare mes cours";
     }
 
     public function enseigner()
     {
-        return "J'enseigne <br>";
+        return "J'enseigne";
     }
 }

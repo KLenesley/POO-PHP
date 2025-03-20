@@ -20,16 +20,16 @@ class Student extends User implements Coursable
 
     public function getClasse()
     {
-        return $this->classe . "<br>";
+        return $this->classe;
     }
 
     public function travailler()
     {
-        return "Je suis en cours <br>";
+        return "Je suis en cours";
     }
 
     public function suivreCours()
     {
-        return "Je suis le cours <br>";
+        return "Je suis le cours";
     }
 }

@@ -4,12 +4,12 @@ abstract class User
 {
     protected ?string $name;
 
-    public function setName(?string $name)
+    public function setName(?string $name) // Mutateur
     {
         $this->name = $name;
     }
 
-    public function getName()
+    public function getName() // Assesseur
     {
         return $this->name . "\n";
     }

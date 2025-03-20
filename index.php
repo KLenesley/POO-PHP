@@ -23,7 +23,7 @@ echo "nbStudents = " . Student::$nbStudents . "<br>";
 echo "<br>";
 
 $user1 = new Student();
-$user1->setName("Momo");
+$user1->setName("Momo le morse");
 $user1->setClasse("SIO1");
 
 echo $user1->getName();
@@ -34,7 +34,7 @@ echo "nbStudents = " . Student::$nbStudents . "<br>";
 echo "<br>";
 
 $user2 = new Student();
-$user2->setName("Coco");
+$user2->setName("Coco qui code");
 $user2->setClasse("SIO1");
 
 echo $user2->getName();
@@ -45,7 +45,7 @@ echo "nbStudents = " . Student::$nbStudents . "<br>";
 echo "<br>";
 
 $user3 = new Teacher();
-$user3->setName("Toto");
+$user3->setName("Toto le prof");
 $user3->setMatieres("SLAM");
 
 echo $user3->getName();

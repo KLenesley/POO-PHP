@@ -9,10 +9,16 @@
 
     {{ name }}
 
+    <ul>
     {% for user in users %}
-        <ul>
-            <li>{{ user.name }}</li>
-        </ul>
+        {% if user.matieres == "SLAM" %}
+            <span style="color: red;">
+        {% else %}
+            <span style="color: green;">
+        {% endif %}
+                <li>{{ user.name|title }} </li>
+        </span>
     {% endfor %}
+    </ul>
 </body>
 </html>
