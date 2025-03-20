@@ -1,5 +1,10 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use Twig\Loader\FilesystemLoader;
+use Twig\Environment;
+
 require_once 'vendor/autoload.php';
 
 require_once ("User.php");
@@ -60,8 +65,8 @@ afficherTravail($user2);
 afficherTravail($user3);
 
 // Twig
-$loader = new \Twig\Loader\FilesystemLoader('templates/');
-$twig = new \Twig\Environment($loader);
+$loader = new FilesystemLoader('templates/');
+$twig = new Environment($loader);
 
 $users = array();
 $users[] = $user1;
@@ -71,3 +76,28 @@ $users[] = $user3;
 echo $twig->render('index.html.twig', [
     'users' => $users,
 ]);
+
+$dotenv = new Dotenv();
+$dotenv->load(__DIR__.'/.env');
+
+$mail = new PHPMailer(true);
+
+try {
+    $mail->isSMTP();
+    $mail->Host = $_ENV['SMTP_HOST'];
+    $mail->SMTPAuth = true;
+    $mail->Username = $_ENV['SMTP_USERNAME'];
+    $mail->Password = $_ENV['SMTP_PASSWORD'];
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port = 465;
+
+    $mail->setFrom($_ENV['SMTP_USERNAME'], $_ENV['SMTP_NAME']);
+    $mail->addAddress($_ENV['SMTP_USERNAME'], $_ENV['SMTP_NAME']);
+    $mail->Subject = 'Coucou';
+    $mail->Body    = 'Mail envoyer depuis PHPMailer';
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}

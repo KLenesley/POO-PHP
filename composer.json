@@ -2,7 +2,9 @@
     "name": "lenekyl/php-poo",
     "type": "project",
     "require": {
-        "twig/twig": "^3.20"
+        "twig/twig": "^3.20",
+        "phpmailer/phpmailer": "^6.9",
+        "symfony/dotenv": "^7.2"
     },
     "license": "MIT",
     "authors": [
